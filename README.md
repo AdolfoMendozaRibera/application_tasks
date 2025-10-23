@@ -94,4 +94,5 @@ src/
 └── types.ts
 
 📸 Capturas (opcional)
-<img width="852" height="786" alt="Application_task" src="https://github.com/user-attachments/assets/76910dba-e8ac-4489-9a05-171c8d4d959c" />
+<img width="844" height="778" alt="Application_task" src="https://github.com/user-attachments/assets/e813fe4c-2b7e-48c6-9011-876909f61228" />
+
