@@ -1,0 +1,715 @@
+/* ===== Variables y Reset ===== */
+:root {
+  --color-primario: #6366f1;
+  --color-primario-hover: #4f46e5;
+  --color-secundario: #8b5cf6;
+  --color-exito: #10b981;
+  --color-advertencia: #f59e0b;
+  --color-error: #ef4444;
+  --color-fondo: #0f172a;
+  --color-fondo-secundario: #1e293b;
+  --color-tarjeta: #334155;
+  --color-texto: #f1f5f9;
+  --color-texto-secundario: #94a3b8;
+  --color-borde: #475569;
+  --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --sombra-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radio: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--color-texto);
+  min-height: 100vh;
+}
+
+/* ===== Aplicación Principal ===== */
+.aplicacion-tareas {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.titulo-contenedor {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.titulo-contenedor h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.tareas-lista-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Estadísticas ===== */
+.estadisticas-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.6s ease-out 0.2s backwards;
+}
+
+.estadistica-card {
+  background: var(--color-fondo-secundario);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-card);
+  transition: var(--transicion);
+  border: 1px solid var(--color-borde);
+  position: relative;
+  overflow: hidden;
+}
+
+.estadistica-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+}
+
+.estadistica-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-hover);
+  border-color: var(--color-primario);
+}
+
+.estadistica-card.progreso {
+  grid-column: span 1;
+}
+
+.estadistica-icono {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.estadistica-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.estadistica-numero {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  line-height: 1;
+}
+
+.estadistica-label {
+  font-size: 0.875rem;
+  color: var(--color-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.barra-progreso {
+  height: 6px;
+  background: var(--color-tarjeta);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.barra-progreso-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+/* ===== Formulario ===== */
+.tarea-formulario {
+  background: var(--color-fondo-secundario);
+  border-radius: var(--radio);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde);
+  animation: fadeIn 0.6s ease-out 0.3s backwards;
+}
+
+.formulario-titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-texto);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tarea-input,
+.tarea-textarea,
+.tarea-select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--color-tarjeta);
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  color: var(--color-texto);
+  font-size: 1rem;
+  transition: var(--transicion);
+  font-family: inherit;
+  margin-bottom: 1rem;
+}
+
+.tarea-input:focus,
+.tarea-textarea:focus,
+.tarea-select:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.tarea-input::placeholder,
+.tarea-textarea::placeholder {
+  color: var(--color-texto-secundario);
+}
+
+.tarea-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.formulario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.formulario-campo label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.formulario-botones {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tarea-boton,
+.tarea-boton-cancelar {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.tarea-boton {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+  color: white;
+}
+
+.tarea-boton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}
+
+.tarea-boton:active {
+  transform: translateY(0);
+}
+
+.tarea-boton-cancelar {
+  background: var(--color-tarjeta);
+  color: var(--color-texto);
+  border: 2px solid var(--color-borde);
+}
+
+.tarea-boton-cancelar:hover {
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: white;
+}
+
+/* ===== Filtros ===== */
+.filtros-contenedor {
+  background: var(--color-fondo-secundario);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde);
+  animation: fadeIn 0.6s ease-out 0.4s backwards;
+}
+
+.filtros-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--color-texto);
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.filtro-grupo label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filtro-botones {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filtro-boton {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.625rem 1rem;
+  background: var(--color-tarjeta);
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  color: var(--color-texto);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.filtro-boton:hover {
+  border-color: var(--color-primario);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.filtro-boton.activo {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.filtro-select {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background: var(--color-tarjeta);
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  color: var(--color-texto);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.filtro-select:hover {
+  border-color: var(--color-primario);
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ===== Lista de Tareas ===== */
+.tareas-lista-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn 0.6s ease-out 0.5s backwards;
+}
+
+.tareas-vacio {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.25rem;
+  color: var(--color-texto-secundario);
+  background: var(--color-fondo-secundario);
+  border-radius: var(--radio);
+  border: 2px dashed var(--color-borde);
+}
+
+/* ===== Tarjeta de Tarea ===== */
+.tarea-contenedor {
+  background: var(--color-fondo-secundario);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  box-shadow: var(--sombra-card);
+  border: 2px solid var(--color-borde);
+  transition: var(--transicion);
+  position: relative;
+  overflow: hidden;
+}
+
+.tarea-contenedor::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  transition: var(--transicion);
+}
+
+.tarea-contenedor.prioridad-alta::before {
+  background: var(--color-error);
+}
+
+.tarea-contenedor.prioridad-media::before {
+  background: var(--color-advertencia);
+}
+
+.tarea-contenedor.prioridad-baja::before {
+  background: var(--color-exito);
+}
+
+.tarea-contenedor:hover {
+  transform: translateX(4px);
+  box-shadow: var(--sombra-hover);
+  border-color: var(--color-primario);
+}
+
+.tarea-contenedor.completada {
+  opacity: 0.7;
+  background: rgba(30, 41, 59, 0.5);
+}
+
+.tarea-contenedor.completada .tarea-titulo {
+  text-decoration: line-through;
+  color: var(--color-texto-secundario);
+}
+
+.tarea-contenedor.vencida:not(.completada) {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.tarea-check {
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-borde);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transicion);
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--color-tarjeta);
+}
+
+.checkbox:hover {
+  border-color: var(--color-primario);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.checkbox.checked {
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+  border-color: transparent;
+  color: white;
+}
+
+.tarea-contenido {
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.tarea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.tarea-titulo {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.tarea-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.badge-prioridad,
+.badge-categoria {
+  font-size: 1.25rem;
+  transition: var(--transicion);
+}
+
+.badge-prioridad:hover,
+.badge-categoria:hover {
+  transform: scale(1.2);
+}
+
+.tarea-descripcion {
+  color: var(--color-texto-secundario);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  word-break: break-word;
+}
+
+.tarea-footer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+  color: var(--color-texto-secundario);
+}
+
+.tarea-fecha,
+.tarea-vencimiento {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.tarea-vencimiento.vencida-texto {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+.tarea-acciones {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.tarea-boton-accion {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-tarjeta);
+  color: var(--color-texto);
+  cursor: pointer;
+  transition: var(--transicion);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.tarea-boton-accion:hover {
+  transform: translateY(-2px);
+}
+
+.tarea-boton-accion.editar:hover {
+  background: var(--color-primario);
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.tarea-boton-accion.eliminar:hover {
+  background: var(--color-error);
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* ===== Animaciones ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .aplicacion-tareas {
+    padding: 1rem 0.75rem;
+  }
+
+  .titulo-contenedor {
+    margin-bottom: 1.5rem;
+  }
+
+  .estadisticas-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .estadistica-card.progreso {
+    grid-column: span 2;
+  }
+
+  .tarea-formulario,
+  .filtros-contenedor {
+    padding: 1.25rem;
+  }
+
+  .formulario-grid,
+  .filtros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tarea-contenedor {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tarea-acciones {
+    width: 100%;
+    justify-content: flex-end;
+    order: 3;
+  }
+
+  .formulario-botones {
+    flex-direction: column;
+  }
+
+  .tarea-boton,
+  .tarea-boton-cancelar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .estadisticas-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .estadistica-card.progreso {
+    grid-column: span 1;
+  }
+
+  .tarea-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .filtro-botones {
+    flex-direction: column;
+  }
+
+  .filtro-boton {
+    width: 100%;
+  }
+}
+
+/* ===== Scrollbar personalizado ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fondo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tarjeta);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-borde);
+}
+
+
+/* ===== Selector de Idioma ===== */
+.languaje-selector {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+}
+
+#languaje-select {
+  padding: 0.5rem 1rem;
+  background: var(--color-tarjeta);
+  color: var(--color-texto);
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+#languaje-select:hover {
+  border-color: var(--color-primario);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+#languaje-select:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+@media (max-width: 768px) {
+  .languaje-selector {
+    top: 1rem;
+    right: 1rem;
+  }
+}

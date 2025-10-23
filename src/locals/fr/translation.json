@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "📝 Lista de Tarefas"
+  },
+
+  "stats": {
+    "total": "Total",
+    "completed": "Concluídas",
+    "active": "Pendentes",
+    "progress": "Progresso"
+  },
+
+  "filters": {
+    "title": "🔍 Filtrar Tarefas",
+    "state": "Estado",
+    "priority": "Prioridade",
+    "category": "Categoria",
+
+    "all": "Todas",
+    "active": "Pendentes",
+    "completed": "Concluídas",
+
+    "priority_high": "🔴 Alta",
+    "priority_medium": "🟡 Média",
+    "priority_low": "🟢 Baixa",
+
+    "cat_personal": "👤 Pessoal",
+    "cat_work": "💼 Trabalho",
+    "cat_home": "🏠 Casa",
+    "cat_study": "📚 Estudos",
+    "cat_other": "📌 Outro"
+  },
+
+  "list": {
+    "empty": "📝 Nenhuma tarefa ainda. Adicione uma para começar!",
+    "no_matches": "🔍 Nenhuma tarefa corresponde aos filtros"
+  },
+
+  "task": {
+    "priority": "Prioridade",
+    "creation_date": "Data de criação",
+    "edit": "Editar tarefa",
+    "delete": "Excluir tarefa",
+    "delete_confirm": "Tem certeza de que deseja excluir esta tarefa?"
+  },
+
+  "form": {
+    "title_edit": "✏️ Editar Tarefa",
+    "title_new": "➕ Nova Tarefa",
+
+    "input_title": "Título da tarefa *",
+    "input_description": "Descrição ou notas (opcional)",
+    "input_priority": "Prioridade",
+    "input_category": "Categoria",
+    "input_date": "Prazo (opcional)",
+
+    "btn_add": "➕ Adicionar Tarefa",
+    "btn_save": "💾 Salvar Alterações",
+    "btn_cancel": "❌ Cancelar"
+  }
+}

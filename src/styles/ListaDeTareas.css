@@ -1,0 +1,15 @@
+.tareas-lista-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tareas-vacio {
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 2px dashed #e0e0e0;
+}

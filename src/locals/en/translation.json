@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "📝 Task List"
+  },
+
+  "stats": {
+    "total": "Total",
+    "completed": "Completed",
+    "active": "Pending",
+    "progress": "Progress"
+  },
+
+  "filters": {
+    "title": "🔍 Filter Tasks",
+    "state": "State",
+    "priority": "Priority",
+    "category": "Category",
+
+    "all": "All",
+    "active": "Active",
+    "completed": "Completed",
+
+    "priority_high": "🔴 High",
+    "priority_medium": "🟡 Medium",
+    "priority_low": "🟢 Low",
+
+    "cat_personal": "👤 Personal",
+    "cat_work": "💼 Work",
+    "cat_home": "🏠 Home",
+    "cat_study": "📚 Study",
+    "cat_other": "📌 Other"
+  },
+
+  "list": {
+    "empty": "📝 No tasks yet. Add one to get started!",
+    "no_matches": "🔍 No tasks match your filter"
+  },
+
+  "task": {
+    "priority": "Priority",
+    "creation_date": "Creation date",
+    "edit": "Edit task",
+    "delete": "Delete task",
+    "delete_confirm": "Are you sure you want to delete this task?"
+  },
+
+  "form": {
+    "title_edit": "✏️ Edit Task",
+    "title_new": "➕ New Task",
+
+    "input_title": "Task title *",
+    "input_description": "Description or notes (optional)",
+    "input_priority": "Priority",
+    "input_category": "Category",
+    "input_date": "Deadline (optional)",
+
+    "btn_add": "➕ Add Task",
+    "btn_save": "💾 Save Changes",
+    "btn_cancel": "❌ Cancel"
+  }
+}

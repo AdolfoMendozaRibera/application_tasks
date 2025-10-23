@@ -1,0 +1,66 @@
+.tarea-contenedor {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tarea-contenedor:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.15);
+}
+
+.tarea-contenedor.completada {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+  opacity: 0.85;
+}
+
+.tarea-contenedor.vencida {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+.tarea-contenedor.prioridad-alta {
+  border-left: 5px solid #ef4444;
+}
+
+.tarea-contenedor.prioridad-media {
+  border-left: 5px solid #f59e0b;
+}
+
+.tarea-contenedor.prioridad-baja {
+  border-left: 5px solid #10b981;
+}
+
+.tarea-check {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+.checkbox:hover {
+  border-color: #667eea;
+  transform: scale(1.1);
+}
+

@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "📝 Aufgabenliste"
+  },
+
+  "stats": {
+    "total": "Insgesamt",
+    "completed": "Erledigt",
+    "active": "Ausstehend",
+    "progress": "Fortschritt"
+  },
+
+  "filters": {
+    "title": "🔍 Aufgaben filtern",
+    "state": "Status",
+    "priority": "Priorität",
+    "category": "Kategorie",
+
+    "all": "Alle",
+    "active": "Ausstehend",
+    "completed": "Erledigt",
+
+    "priority_high": "🔴 Hoch",
+    "priority_medium": "🟡 Mittel",
+    "priority_low": "🟢 Niedrig",
+
+    "cat_personal": "👤 Persönlich",
+    "cat_work": "💼 Arbeit",
+    "cat_home": "🏠 Zuhause",
+    "cat_study": "📚 Studium",
+    "cat_other": "📌 Andere"
+  },
+
+  "list": {
+    "empty": "📝 Keine Aufgaben vorhanden. Füge eine hinzu, um zu beginnen!",
+    "no_matches": "🔍 Keine Aufgaben entsprechen den Filtern"
+  },
+
+  "task": {
+    "priority": "Priorität",
+    "creation_date": "Erstellungsdatum",
+    "edit": "Aufgabe bearbeiten",
+    "delete": "Aufgabe löschen",
+    "delete_confirm": "Sind Sie sicher, dass Sie diese Aufgabe löschen möchten?"
+  },
+
+  "form": {
+    "title_edit": "✏️ Aufgabe bearbeiten",
+    "title_new": "➕ Neue Aufgabe",
+
+    "input_title": "Aufgabentitel *",
+    "input_description": "Beschreibung oder Notizen (optional)",
+    "input_priority": "Priorität",
+    "input_category": "Kategorie",
+    "input_date": "Frist (optional)",
+
+    "btn_add": "➕ Aufgabe hinzufügen",
+    "btn_save": "💾 Änderungen speichern",
+    "btn_cancel": "❌ Abbrechen"
+  }
+}

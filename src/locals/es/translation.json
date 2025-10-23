@@ -1,0 +1,62 @@
+{
+  "app": {
+    "title": "📝 Lista de Tareas"
+  },
+
+  "stats": {
+    "total": "Total",
+    "completed": "Completadas",
+    "active": "Pendientes",
+    "progress": "Progreso"
+  },
+
+
+  "filters": {
+    "title": "🔍 Filtrar Tareas",
+    "state": "Estado",
+    "priority": "Prioridad",
+    "category": "Categoría",
+
+    "all": "Todas",
+    "active": "Activas",
+    "completed": "Completadas",
+
+    "priority_high": "🔴 Alta",
+    "priority_medium": "🟡 Media",
+    "priority_low": "🟢 Baja",
+
+    "cat_personal": "👤 Personal",
+    "cat_work": "💼 Trabajo",
+    "cat_home": "🏠 Hogar",
+    "cat_study": "📚 Estudio",
+    "cat_other": "📌 Otro"
+  },
+
+  "list": {
+    "empty": "📝 No hay tareas. ¡Agrega una para comenzar!",
+    "no_matches": "🔍 No hay tareas que coincidan con los filtros"
+  },
+
+  "task": {
+    "priority": "Prioridad",
+    "creation_date": "Fecha de creación",
+    "edit": "Editar tarea",
+    "delete": "Eliminar tarea",
+    "delete_confirm": "¿Estás seguro de eliminar esta tarea?"
+  },
+
+  "form": {
+    "title_edit": "✏️ Editar Tarea",
+    "title_new": "➕ Nueva Tarea",
+
+    "input_title": "Título de la tarea *",
+    "input_description": "Descripción o notas (opcional)",
+    "input_priority": "Prioridad",
+    "input_category": "Categoría",
+    "input_date": "Fecha límite (opcional)",
+
+    "btn_add": "➕ Agregar Tarea",
+    "btn_save": "💾 Guardar Cambios",
+    "btn_cancel": "❌ Cancelar"
+  }
+}
