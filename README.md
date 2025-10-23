@@ -94,15 +94,4 @@ src/
 └── types.ts
 
 📸 Capturas (opcional)
-
-(Agrega imágenes aquí de tu interfaz, por ejemplo con tareas creadas, selector de idioma o estadísticas.)
-
-🔧 Mejoras futuras
-
- Integración con base de datos (Firebase o MongoDB).
-
- Tema oscuro / claro.
-
- Recordatorios con notificaciones.
-
- Sincronización en la nube.
+<img width="852" height="786" alt="Application_task" src="https://github.com/user-attachments/assets/76910dba-e8ac-4489-9a05-171c8d4d959c" />
